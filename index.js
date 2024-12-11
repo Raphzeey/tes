@@ -7,6 +7,9 @@ const db = require('./connection')
 const response = require('./response')
 // route / url / endpoint utama kita method get
 app.use(bodyParser.json())
+app.get('/', (req, res) => {
+    res.send('Hello, world!');
+});
 
 app.get('/companies', (req, res) => {
   db.query('SELECT * FROM companies', (err, results) => {
